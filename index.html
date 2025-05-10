@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samanyu Kulkarni - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0d47a1;
+            --secondary-color: #2196f3;
+            --accent-color: #e3f2fd;
+            --text-color: #333;
+            --light-text: #666;
+            --background-color: #fff;
+            --card-background: #f9f9f9;
+            --header-gradient: linear-gradient(135deg, #0d47a1, #2196f3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        header {
+            background: var(--header-gradient);
+            color: white;
+            padding: 100px 0 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-bottom: 20px;
+            background-color: var(--accent-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .profile-img i {
+            font-size: 60px;
+            color: var(--primary-color);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            margin: 20px 0;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav li {
+            padding: 15px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Main Content Sections */
+        section {
+            padding: 60px 0;
+        }
+
+        section:nth-child(even) {
+            background-color: #f5f8fb;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            position: relative;
+            font-size: 2rem;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
+        }
+
+        /* Objective Section */
+        .objective {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.7;
+            padding: 20px;
+            background-color: var(--card-background);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--secondary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+            top: 25px;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+            padding-right: 60px;
+        }
+
+        .right {
+            left: 50%;
+            padding-left: 60px;
+        }
+
+        .left::after {
+            right: -14px;
+        }
+
+        .right::after {
+            left: -14px;
+        }
+
+        .timeline-content {
+            padding: 20px 25px;
+            background-color: white;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .timeline-content .date {
+            color: var(--light-text);
+            margin-bottom: 15px;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .timeline-content p {
+            margin-bottom: 10px;
+        }
+
+        /* Awards & Skills Section */
+        .awards-skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .award-card, .skill-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .award-card:hover, .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .award-card h3, .skill-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .award-card p, .skill-card p {
+            color: var(--text-color);
+        }
+
+        /* References Section */
+        .references {
+            text-align: center;
+            font-style: italic;
+            color: var(--light-text);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .social-links {
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: opacity 0.3s;
+        }
+
+        .social-links a:hover {
+            opacity: 0.8;
+        }
+
+        .footer-text {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-img {
+            height: 170px;
+            background-color: var(--accent-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .project-img i {
+            font-size: 50px;
+            color: var(--primary-color);
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .project-info p {
+            margin-bottom: 15px;
+            color: var(--light-text);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .project-links a {
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .project-links a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .timeline::before {
+                left: 40px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 26px;
+            }
+
+            .left::after, .right::after {
+                left: 26px;
+            }
+
+            .right {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="profile-img">
+                <i class="fas fa-user"></i>
+            </div>
+            <h1>Samanyu Kulkarni</h1>
+            <p class="subtitle">Amador Valley High School, Pleasanton, California, Class of 2027</p>
+            <div class="contact-info">
+                <a href="mailto:samanyuckulkarni@gmail.com"><i class="fas fa-envelope"></i> samanyuckulkarni@gmail.com</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#objective">Objective</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#awards">Awards & Skills</a></li>
+            <li><a href="#references">References</a></li>
+        </ul>
+    </nav>
+
+    <!-- Objective Section -->
+    <section id="objective">
+        <div class="container">
+            <h2 class="section-title">Objective</h2>
+            <div class="objective">
+                <p>Driven high school student passionate about combining biology and technology to tackle global health challenges and develop impactful healthcare solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Research Intern, University of Michigan</h3>
+                        <div class="date">January 2025 - Present</div>
+                        <p>Currently working on a research project at Systems Biology Lab under the guidance of Prof. Sriram Chandrasekaran, on research to survey the accuracy of AI powered drug-target prediction techniques and their effectiveness and develop a more efficient model targeting three drug targets involved in pathways related to cancer and brain damage.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Research Intern, Peptris Inc</h3>
+                        <div class="date">June - December 2024</div>
+                        <p>Peptris Inc leverages AI to accelerate drug discovery by predicting protein structures and interactions for developing innovative therapeutic solutions. My research focused on designing algorithm-driven methods to compare protein residues, enabling the identification of novel drugs targeting similar pathways. This approach has the potential to increase drug repurposing success rates, reducing costs and accelerating treatments for critical diseases.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Intern, Michigan Technological University</h3>
+                        <div class="date">December 2023 - January 2024</div>
+                        <p>Interned with Prof. Bo Chen, developing an algorithm-driven steganographic technique that enhanced malware stealth. Discovered a new PDF vulnerability, emphasizing critical cybersecurity risks and the need for advanced countermeasures in digital forensics.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Founder, MasterCyberAlien Training Program</h3>
+                        <div class="date">January 2023 - Present</div>
+                        <p>Developed a six-week live cybersecurity course for middle schoolers, covering cryptography, network security, Linux, and forensics—aligning with National Cyber League syllabus. Trained nearly hundred students across the U.S., improving their problem-solving speed and enhancing readiness for national cybersecurity competitions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Protein Residue Analysis</h3>
+                        <p>A framework that assigns interaction letters instead of traditional tertiary backbone residues and uses the Needleman-Wunsch algorithm for biologically relevant similarity scores.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/samanyuckulkarni123/proteinresidue" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional project cards can be added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Skills Section -->
+    <section id="awards">
+        <div class="container">
+            <h2 class="section-title">Awards & Skills</h2>
+            <div class="awards-skills">
+                <div class="award-card">
+                    <h3>National Cyber League Platinum Badge</h3>
+                    <p>Top 50 out of ~10,000 participants. The NCL is a defensive and offensive puzzle-based, capture-the-flag style cybersecurity competition. I placed in the top 1% of over ~10,000 high schoolers, college students and working professionals in '23 and '24.</p>
+                </div>
+                <div class="award-card">
+                    <h3>First Place, Alameda County Science and Engineering Fair</h3>
+                    <p>Ranked first place out of approx. 400 projects for presenting my framework that assigns interaction letters instead of traditional tertiary backbone residues and uses the Needleman-Wunsch algorithm for biologically relevant similarity scores.</p>
+                </div>
+                <div class="award-card">
+                    <h3>Silver Medalist, 2025 Stanford Science Olympiad Invitational</h3>
+                    <p>Awarded Silver (2 out of 150) for exceptional performance in the Write It, Do It event, demonstrating strong problem-solving and communication skills while accurately interpreting and constructing complex engineering designs.</p>
+                </div>
+                <div class="award-card">
+                    <h3>eJPT (Cybersecurity)</h3>
+                    <p>One of the youngest in the world to earn the certification after a 48 hour hackathon. The test involved focus on real-time algorithm development & problem solving for automated vulnerability scanning & exploit chaining.</p>
+                </div>
+                <div class="award-card">
+                    <h3>Co-founder & Director, Hindu Swayamsevak Sangh(HSS)</h3>
+                    <p>HSS is a 501(c) organization focused on improving quality of community life. As the lead of a 30-teen strong chapter in the Tri-valley area, I have led multiple initiatives including driving food donation, blood donation and recognition by multiple City Councils.</p>
+                </div>
+                <div class="award-card">
+                    <h3>Amador Valley High School Varsity Badminton</h3>
+                    <p>2X varsity badminton player of Amador Valley Badminton team.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Academic Coursework</h3>
+                    <p>AP Biology, AP Chemistry, AP Computer Science A, Honors Pre Calculus</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Technical Skills</h3>
+                    <p>Python, Java, Javascript, Biopython PDB Parser, Biopython Polypeptide, and DSSP Neighbor Search among others.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- References Section -->
+    <section id="references">
+        <div class="container">
+            <h2 class="section-title">References</h2>
+            <div class="references">
+                <p>Available upon request.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/samanyuckulkarni123" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:samanyuckulkarni@gmail.com"><i class="fas fa-envelope"></i></a>
+                <!-- Add more social links as needed -->
+            </div>
+            <p class="footer-text">&copy; 2025 Samanyu Kulkarni. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 60,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
